@@ -196,25 +196,27 @@ TOOL_VERSIONS = {
         },
         "strip_prefix": "python",
     },
-    "3.10.9": {
-        "url": "20230116/cpython-{python_version}+20230116-{platform}-{build}.tar.gz",
+    "3.10.11": {
+        "url": "20230507/cpython-{python_version}+20230507-{platform}-{build}.tar.gz",
         "sha256": {
             "aarch64-apple-darwin": "018d05a779b2de7a476f3b3ff2d10f503d69d14efcedd0774e6dab8c22ef84ff",
             "aarch64-unknown-linux-gnu": "2003750f40cd09d4bf7a850342613992f8d9454f03b3c067989911fb37e7a4d1",
             "x86_64-apple-darwin": "0e685f98dce0e5bc8da93c7081f4e6c10219792e223e4b5886730fd73a7ba4c6",
             "x86_64-pc-windows-msvc": "59c6970cecb357dc1d8554bd0540eb81ee7f6d16a07acf3d14ed294ece02c035",
             "x86_64-unknown-linux-gnu": "d196347aeb701a53fe2bb2b095abec38d27d0fa0443f8a1c2023a1bed6e18cdf",
+            "ppc64le-unkown-linux-gnu": "73a9d4c89ed51be39dd2de4e235078281087283e9fdedef65bec02f503e906ee",
         },
         "strip_prefix": "python",
     },
-    "3.11.1": {
-        "url": "20230116/cpython-{python_version}+20230116-{platform}-{build}.tar.gz",
+    "3.11.3": {
+        "url": "20230507/cpython-{python_version}+20230507-{platform}-{build}.tar.gz",
         "sha256": {
             "aarch64-apple-darwin": "4918cdf1cab742a90f85318f88b8122aeaa2d04705803c7b6e78e81a3dd40f80",
             "aarch64-unknown-linux-gnu": "debf15783bdcb5530504f533d33fda75a7b905cec5361ae8f33da5ba6599f8b4",
             "x86_64-apple-darwin": "20a4203d069dc9b710f70b09e7da2ce6f473d6b1110f9535fb6f4c469ed54733",
             "x86_64-pc-windows-msvc": "edc08979cb0666a597466176511529c049a6f0bba8adf70df441708f766de5bf",
             "x86_64-unknown-linux-gnu": "02a551fefab3750effd0e156c25446547c238688a32fabde2995c941c03a6423",
+            "ppc64le-unkown-linux-gnu": "767d24f3570b35fedb945f5ac66224c8983f2d556ab83c5cfaa5f3666e9c212c",
         },
         "strip_prefix": "python",
     },
@@ -224,8 +226,8 @@ TOOL_VERSIONS = {
 MINOR_MAPPING = {
     "3.8": "3.8.15",
     "3.9": "3.9.16",
-    "3.10": "3.10.9",
-    "3.11": "3.11.1",
+    "3.10": "3.10.11",
+    "3.11": "3.11.3",
 }
 
 PLATFORMS = {
@@ -273,6 +275,14 @@ PLATFORMS = {
         ],
         os_name = LINUX_NAME,
         arch = "x86_64",
+    ),
+    "ppc64le-unknown-linux-gnu": struct(
+        compatible_with = [
+            "@platforms//os:linux",
+            "@platforms//cpu:ppc64le",
+        ],
+        os_name = LINUX_NAME,
+        arch = "ppc64le",
     ),
 }
 
